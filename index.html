@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
 </head>
+
 <body>
     <div class="top">
         <header>
@@ -101,6 +103,18 @@
             &copy; 2018 Newe
         </div>
     </footer>
+    <script>
+        function scroll(elm) {
+            document.getElementById(elm).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        but.addEventListener('click', function () {
+            scroll('content')
+        }, false);
+    </script>
 </body>
 </body>
+
 </html>
