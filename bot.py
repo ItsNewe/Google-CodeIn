@@ -8,6 +8,7 @@ updater = Updater(token='This isn\'t a real token')
 dispatcher = updater.dispatcher
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
+log = logging.getLogger(__name__)
 
 
 def getstars(bot, update):
