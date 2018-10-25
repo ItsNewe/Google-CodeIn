@@ -1,5 +1,3 @@
-# Hello Google!
+# Google CodeIn Telegram bot task
 
-This is my readme :)
----
-Access the [WEBSITE](https://itsnewe.github.io/Google-CodeIn/)
+Look at him go
