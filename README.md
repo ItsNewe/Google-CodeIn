@@ -1,5 +1,4 @@
-# Hello Google!
+# Weather based location
 
 This is my readme :)
 ---
-Access the [WEBSITE](https://itsnewe.github.io/Google-CodeIn/)
