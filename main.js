@@ -1,6 +1,11 @@
 var win = document.getElementById('winput');
 var secondary = document.getElementById('secondary');
 
+document.getElementById('mform').submit(function(e) {
+    e.preventDefault();
+    weather();
+});
+
 function weather() {
 
     fetch('https://secure.geonames.org/searchJSON?q=' + win.value + '&maxRows=1&username=newe', {
