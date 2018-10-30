@@ -14,29 +14,29 @@ html{
     font-weight: 300;
 }
 
-.WDT li{
+#WDT li{
     list-style-type: none;
     justify-content: baseline;
     font-size: 120%;
 }
 
-.WDT ul{
+#WDT ul{
     text-align: justify;
 }
 
-.WDT {
+#WDT {
     text-align: center;
     background: #fff;
     border-radius: 2px;
-    display: inline-block;
+    margin: 20px auto auto auto;
+    padding-top: 5px;
     height: 300px;
-    margin: 1rem;
     width: 30%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.WDT:hover {
+#WDT:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
 

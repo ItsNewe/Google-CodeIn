@@ -3,7 +3,6 @@ var secondary = document.getElementById('secondary');
 
 function weather() {
     event.preventDefault();
-    console.log('adib');
     fetch('https://secure.geonames.org/searchJSON?q=' + win.value + '&maxRows=1&username=newe', {
         method: 'GET'
     }).then(function (response) {
@@ -15,7 +14,12 @@ function weather() {
                 fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + objNCity.geonames[0].name + ',' + objNCity.geonames[0].countryCode + '&appid=77acf19773c56a89912b921dccb3e560').then(function (response) {
                     response.text().then(function (text) {
                         weatherData = JSON.parse(text);
-                        console.log(weatherData);
+                        try{
+                            $('#WDT').remove();
+                        }
+                        catch{
+                            console.log('none');
+                        }
 
                         var date = new Date(weatherData.list[0].dt * 1000);
                         var currentT = Math.round(weatherData.list[0].main.temp) - 273;
@@ -25,7 +29,7 @@ function weather() {
                         var wDesc = weatherData.list[0].weather[0].description;
 
                         g = document.createElement('div');
-                        g.setAttribute("class", "WDT");
+                        g.setAttribute("ID", "WDT");
 
                         loc = document.createElement('h1');
                         loc.innerHTML = `Weather for ${objNCity.geonames[0].name}  `;
@@ -62,7 +66,6 @@ function weather() {
 
                         g.appendChild(lm);
                         document.body.appendChild(g);
-                        console.log('end');
                     });
                 });
             } else {
