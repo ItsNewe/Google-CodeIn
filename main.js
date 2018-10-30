@@ -66,6 +66,7 @@ function weather() {
 
                         g.appendChild(lm);
                         document.body.appendChild(g);
+                        secondary.style = "visibility: hidden";
                     });
                 });
             } else {

@@ -46,3 +46,7 @@ html{
 .max{
     color: rgb(241, 40, 40);
 }
+
+#secondary{
+    color: red;
+}
