@@ -1,13 +1,9 @@
 var win = document.getElementById('winput');
 var secondary = document.getElementById('secondary');
 
-document.getElementById('mform').submit(function(e) {
-    e.preventDefault();
-    weather();
-});
-
 function weather() {
-
+    event.preventDefault();
+    console.log('adib');
     fetch('https://secure.geonames.org/searchJSON?q=' + win.value + '&maxRows=1&username=newe', {
         method: 'GET'
     }).then(function (response) {
@@ -32,8 +28,12 @@ function weather() {
                         g.setAttribute("class", "WDT");
 
                         loc = document.createElement('h1');
-                        loc.innerHTML = `Weather for ${objNCity.geonames[0].name}, ${objNCity.geonames[0].countryCode}`
-                        g.append(loc);
+                        loc.innerHTML = `Weather for ${objNCity.geonames[0].name}  `;
+                        imloc = document.createElement('img');
+                        imloc.setAttribute("src", "https://www.countryflags.io/"+objNCity.geonames[0].countryCode+"/flat/32.png");
+                        loc.appendChild(imloc);
+                        g.appendChild(loc);
+                        
                         e1 = document.createElement("h4");
                         e1.innerHTML = `${date.getUTCDate()}/${date.getMonth()}/${date.getFullYear()} - ${date.getUTCHours()}h`;
                         g.appendChild(e1);
@@ -49,15 +49,15 @@ function weather() {
 
                         lm = document.createElement("ul");
                         l1 = document.createElement("li");
-                        l1.innerHTML = `Current temp: ${currentT}°C`;
+                        l1.innerHTML = `<i class="fas fa-thermometer-half"></i> Current temp: ${currentT}°C`;
                         lm.appendChild(l1);
 
                         l2 = document.createElement("li");
-                        l2.innerHTML = `Min: ${minT}°C`;
+                        l2.innerHTML = `<i class="fas fa-arrow-down min"></i> Min: <span class="min">${minT}°C</span>`;
                         lm.appendChild(l2);
 
                         l3 = document.createElement("li");
-                        l3.innerHTML = `Max: ${maxT}°C`;
+                        l3.innerHTML = `<i class="fas fa-arrow-up max"></i> Max: <span class="max">${maxT}°C</span>`;
                         lm.appendChild(l3);
 
                         g.appendChild(lm);
@@ -72,3 +72,5 @@ function weather() {
         });
     });
 }
+
+document.getElementById('mform').addEventListener("submit", weather());
