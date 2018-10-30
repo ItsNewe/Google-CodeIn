@@ -3,7 +3,7 @@ var secondary = document.getElementById('secondary');
 
 function weather() {
 
-    fetch('http://api.geonames.org/searchJSON?q=' + win.value + '&maxRows=1&username=newe', {
+    fetch('https://secure.geonames.org/searchJSON?q=' + win.value + '&maxRows=1&username=newe', {
         method: 'GET'
     }).then(function (response) {
         response.text().then(function (text) {
